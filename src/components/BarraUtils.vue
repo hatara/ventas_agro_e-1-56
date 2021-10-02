@@ -16,7 +16,8 @@
 </template>
 <style scoped>
 .barra-utils {
-    height: 73px; /* analizar cual altura debe ser */
+    height: 60px; /* analizar cual altura debe ser */
     background-color: #DDE11D;
+    align-content: center;
 }
 </style>

@@ -1,19 +1,30 @@
 <template>
+  <cabeza-pag/>
+  <banner-sup imagen="bannerSup-home.jpg"/>
+  <barra-utils/>
   <div class="home">
-    <h1>INICIO</h1>
-    <h2><p>Ventas Agro</p></h2>
-    Proyecto Web del grupo E-1-56<br>
-    Ciclo 3 de Programación<br>
-    Misión TIC 2022
+    <br>
+    <h1>Tarjetas de Productos</h1>
+    <br>
+    <br>
+    <br>
   </div>
+  <pie-pagina/>
 </template>
 
 <script>
-// @ is an alias to /src
+import CabezaPag from '@/components/Header.vue'
+import BannerSup from '@/components/BannerSup.vue'
+import BarraUtils from '@/components/BarraUtils.vue'
+import PiePagina from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
+    CabezaPag,
+    BannerSup,
+    BarraUtils,
+    PiePagina
   }
 }
 </script>

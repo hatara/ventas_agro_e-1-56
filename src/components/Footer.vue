@@ -2,12 +2,12 @@
     <footer>
         <div class="row pie-pag">
             <div class="col-lg-2">
-                Logo fondo amarillo
+                <span style="background-color: #DDE11D;">&nbsp;Logo&nbsp;</span>
             </div>
-            <div class="col-lg-8">
-                Todos los derechos reservados 2021
+            <div class="col-lg-8 reservados">
+                © Todos los derechos reservados 2021
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-2 pqrs">
                 PQRS
             </div>
         </div>
@@ -15,6 +15,18 @@
 </template>
 <style>
 .pie-pag {
-  background-color: #586934;
+    height: 60px;
+    background-color: #586934;
+    align-content: center;
+}
+.reservados {
+    font-weight: 100 !important;
+    color: #FFF;
+}
+.pqrs {
+    font-size: 20pt;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
 }
 </style>
