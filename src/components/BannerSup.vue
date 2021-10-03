@@ -1,6 +1,6 @@
 <template>
     <div id="banner" class="row">
-        <img alt="Banner superior" :src="getBannerPicture()" class="banner-img">
+        <img alt="Banner superior" :src="getBannerImage()" class="banner-img">
     </div>
 </template>
 <script>
@@ -10,7 +10,7 @@ export default {
         imagen: String
     },
     methods: {
-        getBannerPicture () {
+        getBannerImage () {
             /* Función para cargar imágenes dinámicamente */
             let images = require.context('@/assets/', false, /\.jpg$|\.png$/)
             return images('./' + this.imagen)
