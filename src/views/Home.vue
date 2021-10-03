@@ -33,48 +33,39 @@ export default {
         {
           id: 1,
           nombre: 'Frutas',
-          imagen: 'cat-1-frutas.jpg'
-        },
+          imagen: 'cat-1-frutas.jpg'},
         {
           id: 2,
           nombre: 'Verduras',
-          imagen: 'cat-2-verduras.jpg'
-        },
+          imagen: 'cat-2-verduras.jpg'},
         {
           id: 3,
           nombre: 'Raíces',
-          imagen: 'cat-3-raices.jpg'
-        },
+          imagen: 'cat-3-raices.jpg'},
         {
           id: 4,
           nombre: 'Granos',
-          imagen: 'cat-4-granos.jpg'
-        },
+          imagen: 'cat-4-granos.jpg'},
         {
           id: 5,
           nombre: 'Carnes',
-          imagen: 'cat-5-carnes.jpg'
-        },
+          imagen: 'cat-5-carnes.jpg'},
         {
           id: 6,
           nombre: 'Pollo',
-          imagen: 'cat-6-pollo.jpg'
-        },
+          imagen: 'cat-6-pollo.jpg'},
         {
           id: 7,
           nombre: 'Pescado',
-          imagen: 'cat-7-pescado.jpg'
-        },
+          imagen: 'cat-7-pescado.jpg'},
         {
           id: 8,
           nombre: 'Lácteos',
-          imagen: 'cat-8-lacteos.jpg'
-        },
+          imagen: 'cat-8-lacteos.jpg'},
         {
           id: 9,
           nombre: 'Otros',
-          imagen: 'cat-9-otros.jpg'
-        } 
+          imagen: 'cat-9-otros.jpg'} 
       ]
     }
   },
