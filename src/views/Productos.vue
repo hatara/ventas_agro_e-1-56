@@ -22,27 +22,26 @@ export default {
         PiePagina
     },
     props: {
-        cat_escogida: Number
+        escogida: String
     },
     data () {
         return {
-            categoria: {},
+            categoria: String,
             categorias: [
-                { id: 1, nombre: 'Frutas'},
-                { id: 2, nombre: 'Verduras'},
-                { id: 3, nombre: 'Raíces'},
-                { id: 4, nombre: 'Granos'},
-                { id: 5, nombre: 'Carnes'},
-                { id: 6, nombre: 'Pollo'},
-                { id: 7, nombre: 'Pescado'},
-                { id: 8, nombre: 'Lácteos'},
-                { id: 9, nombre: 'Otros'} 
+                { id: '1', nombre: 'Frutas'},
+                { id: '2', nombre: 'Verduras'},
+                { id: '3', nombre: 'Raíces'},
+                { id: '4', nombre: 'Granos'},
+                { id: '5', nombre: 'Carnes'},
+                { id: '6', nombre: 'Pollo'},
+                { id: '7', nombre: 'Pescado'},
+                { id: '8', nombre: 'Lácteos'},
+                { id: '9', nombre: 'Otros'} 
             ]
         }
     },
     created () {
-        // this.categoria = this.categorias.filter(fcategoria => fcategoria.id === this.cat_escogida)
-        this.categoria = this.categorias.find(fcategoria => fcategoria.id === this.cat_escogida)
+        this.categoria = this.categorias.find(fcat => fcat.id === this.escogida)
     }
 }
 </script>

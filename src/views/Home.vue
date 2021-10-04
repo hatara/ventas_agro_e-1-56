@@ -5,7 +5,12 @@
   <div class="row">&nbsp;</div>
   <div class="row cat-container">
     <div v-for="categoria in categorias" :key="categoria.id" class="col-lg-3 div-cat">
-      <img class="img-cat" :src="getImageCategoria(categoria.imagen)">
+        <!-- <router-link :to="{ name: 'Productos', params: { escogida:'2' }}"> -->
+        <!-- <router-link :to="{ path: '/productos', query: { escogida: '2' }}"> -->
+        <!-- <router-link to="/aux"> -->
+        <router-link :to="{ name:'AuxTest' }">
+        <img class="img-cat" :src="getImageCategoria(categoria.imagen)">
+      </router-link>
       <h3>{{ categoria.nombre }}</h3>
       <br>
     </div>
