@@ -23,7 +23,7 @@ const routes = [
     component: Registro
   },
   {
-    path: '/productos',
+    path: '/productos/:categoria',
     name: 'Productos',
     component: Productos,
     props: true

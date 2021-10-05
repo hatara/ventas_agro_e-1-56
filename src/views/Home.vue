@@ -8,7 +8,8 @@
         <!-- <router-link :to="{ name: 'Productos', params: { escogida:'2' }}"> -->
         <!-- <router-link :to="{ path: '/productos', query: { escogida: '2' }}"> -->
         <!-- <router-link to="/aux"> -->
-        <router-link :to="{ name:'AuxTest' }">
+        <!-- <router-link :to="{ name:'AuxTest' }"> -->
+        <router-link :to="{ path: '/productos/' + categoria.id }">
         <img class="img-cat" :src="getImageCategoria(categoria.imagen)">
       </router-link>
       <h3>{{ categoria.nombre }}</h3>
