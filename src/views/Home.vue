@@ -3,19 +3,10 @@
   <banner-sup imagen="bannerSup-home.jpg"/>
   <barra-utils/>
   <div class="row">&nbsp;</div>
-  <div class="row cat-container">
-    <div v-for="categoria in categorias" :key="categoria.id" class="col-lg-3 div-cat">
-        <!-- <router-link :to="{ name: 'Productos', params: { escogida:'2' }}"> -->
-        <!-- <router-link :to="{ path: '/productos', query: { escogida: '2' }}"> -->
-        <!-- <router-link to="/aux"> -->
-        <!-- <router-link :to="{ name:'AuxTest' }"> -->
-        <router-link :to="{ path: '/productos/' + categoria.id }">
-        <img class="img-cat" :src="getImageCategoria(categoria.imagen)">
-      </router-link>
-      <h3>{{ categoria.nombre }}</h3>
-      <br>
-    </div>
+  <div class="items">
+    <tarjetas-categoria v-for="categoria in categorias" :key="categoria.id" :nombre="categoria.nombre" :imagen="categoria.imagen" :id="categoria.id"/> 
   </div>
+
   <pie-pagina/>
 </template>
 
@@ -24,6 +15,7 @@ import CabezaPag from '@/components/Header.vue'
 import BannerSup from '@/components/BannerSup.vue'
 import BarraUtils from '@/components/BarraUtils.vue'
 import PiePagina from '@/components/Footer.vue'
+import TarjetasCategoria from '@/components/TarjetasCategoria.vue'
 
 export default {
   name: 'Home',
@@ -31,70 +23,82 @@ export default {
     CabezaPag,
     BannerSup,
     BarraUtils,
-    PiePagina
+    PiePagina,
+    TarjetasCategoria
   },
   data () {
     return {
+  
       categorias: [
         {
           id: 1,
           nombre: 'Frutas',
-          imagen: 'cat-1-frutas.jpg'},
+          imagen: 'cat_1_frutas.jpg'},
         {
           id: 2,
           nombre: 'Verduras',
-          imagen: 'cat-2-verduras.jpg'},
+          imagen: 'cat_2_Verduras.jpg'},
         {
           id: 3,
-          nombre: 'Raíces',
-          imagen: 'cat-3-raices.jpg'},
+          nombre: 'Legumbres',
+          imagen: 'cat_3_Legumbres.jpg'},
         {
           id: 4,
-          nombre: 'Granos',
-          imagen: 'cat-4-granos.jpg'},
+          nombre: 'Tubérculos',
+          imagen: 'cat_4_Tuberculos.jpg'},
         {
           id: 5,
-          nombre: 'Carnes',
-          imagen: 'cat-5-carnes.jpg'},
+          nombre: 'Lácteos',
+          imagen: 'cat_5_Lacteos.jpg'},
         {
           id: 6,
-          nombre: 'Pollo',
-          imagen: 'cat-6-pollo.jpg'},
+          nombre: 'Huevos',
+          imagen: 'cat_6_Huevos.jpg'},
         {
           id: 7,
-          nombre: 'Pescado',
-          imagen: 'cat-7-pescado.jpg'},
+          nombre: 'Carne, pollo y pescado',
+          imagen: 'cat_7_Carne_pollo_pescado.jpg'},
         {
           id: 8,
-          nombre: 'Lácteos',
-          imagen: 'cat-8-lacteos.jpg'},
-        {
-          id: 9,
           nombre: 'Otros',
-          imagen: 'cat-9-otros.jpg'} 
+          imagen: 'cat_8_Otros.jpg'}
+        // {
+        //   id: 9,
+        //   nombre: 'Otros',
+        //   imagen: 'cat-9-otros.jpg'} 
       ]
     }
   },
-  methods: {
-    getImageCategoria (nombre_archivo) {
-      let images = require.context('@/assets/', false, /\.jpg$|\.png$/)
-      return images('./' + nombre_archivo)
-    }
-  }
+
 }
 </script>
 <style scoped>
 .cat-container {
   align-content: center;
+  
 }
 .div-cat {
-  /* padding: 5px; */
-  /* margin: 10px; */
   text-align: center;
+  position: relative;
 }
-.img-cat {
-    border: solid;
-    border-radius: 15px;
-    width: 250px;
+
+.items{
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
 }
+
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
