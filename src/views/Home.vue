@@ -41,19 +41,19 @@ export default {
         {
           id: 3,
           nombre: 'Legumbres',
-          imagen: 'cat_3_Legumbres.jpg'},
+          imagen: 'cat_3_Legumbres.jpg',},
         {
           id: 4,
           nombre: 'Tubérculos',
-          imagen: 'cat_4_Tuberculos.jpg'},
+          imagen: 'cat_4_Tuberculos.jpg',},
         {
           id: 5,
           nombre: 'Lácteos',
-          imagen: 'cat_5_Lacteos.jpg'},
+          imagen: 'cat_5_Lacteos.jpg',},
         {
           id: 6,
           nombre: 'Huevos',
-          imagen: 'cat_6_Huevos.jpg'},
+          imagen: 'cat_6_Huevos.jpg',},
         {
           id: 7,
           nombre: 'Carne, pollo y pescado',
@@ -61,11 +61,7 @@ export default {
         {
           id: 8,
           nombre: 'Otros',
-          imagen: 'cat_8_Otros.jpg'}
-        // {
-        //   id: 9,
-        //   nombre: 'Otros',
-        //   imagen: 'cat-9-otros.jpg'} 
+          imagen: 'cat_8_Otros.jpg',}
       ]
     }
   },

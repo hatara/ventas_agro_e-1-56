@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
+    <div class="container">
         <router-link :to="{ path: '/productos/' + id }"> 
-        <div class="titulo">{{nombre}}</div>
         <img class="img-cat" :src="getImageCategoria(imagen)">
+        <img class="img-cat-top" :src="getImageCategoriaH(imagen)">
         </router-link>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -19,7 +19,12 @@ export default {
     getImageCategoria (nombre_archivo) {
       let images = require.context('@/assets/Imagenes/Categorias', false, /\.jpg$|\.png$/)
       return images('./' + nombre_archivo)
+    },
+    getImageCategoriaH (nombre_archivo) {
+      let images = require.context('@/assets/Imagenes/Categorias/Hover', false, /\.jpg$|\.png$/)
+      return images('./' + nombre_archivo)
     }
+
   }
 
 }
@@ -34,29 +39,32 @@ export default {
     margin: 10px;
     position:relative;
 }
-.titulo{
-    position: absolute;
-    font-family: 'Roboto';
-    font-style:normal;
-    font-size: larger;
-    font-weight: 700;
-    color:transparent;
-    top:45%;
-    right: 50%;
-}
 
-.titulo:hover{
-    position:absolute;
-    color: white;
-}
 
 .img-cat{
     display: flex;
     width: 200px;
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    
+    position:absolute;
 }
+.img-cat-top{
+    display: flex;
+    width: 200px;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.img-cat:hover{
+    transition: all 0,50;
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    opacity: 0;
+}
+
+
 
 /* .img-cat:hover{
     filter: brightness(60%);
