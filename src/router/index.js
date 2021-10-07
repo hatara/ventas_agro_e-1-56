@@ -6,6 +6,7 @@ import Productos from '../views/Productos.vue'
 import AuxTest from '../views/AuxTest.vue'
 import NotFound from '../views/NotFound.vue'
 
+
 const routes = [
   {
     path: '/',
