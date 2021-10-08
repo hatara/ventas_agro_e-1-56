@@ -5,10 +5,8 @@
     <div class="row">
         <h3>Productos de {{ categoria.nombre }}</h3>
     </div>
-    <div v-for="producto in productos" :key="producto.id" class="row">
-        <div class="col-lg-2">{{ producto.imagen }}.jpg</div>
-        <div class="col-lg-4">{{ producto.nombre }}</div>
-        <div class="col-lg-2">$ {{ producto.precio }}</div>
+    <div class="items">
+        <tarjetas-producto v-for="producto in productos" :key="producto.id" :nombre="producto.nombre" :imagen="producto.imagen" :id="producto.id"/> 
     </div>
     <pie-pagina/>
 </template>
@@ -17,6 +15,7 @@ import CabezaPag from '@/components/Header.vue'
 import BannerSup from '@/components/BannerSup.vue'
 import BarraUtils from '@/components/BarraUtils.vue'
 import PiePagina from '@/components/Footer.vue'
+import TarjetasProducto from '@/components/TarjetasProducto.vue'
 
 export default {
     name: 'Productos',
@@ -24,7 +23,8 @@ export default {
         CabezaPag,
         BannerSup,
         BarraUtils,
-        PiePagina
+        PiePagina,
+        TarjetasProducto
     },
     data () {
         return {
@@ -131,7 +131,6 @@ export default {
         let idcat = parseInt( this.$route.params.categoria )
         this.categoria = this.categorias.find( fcat => fcat.id === idcat )
         this.productos = this.todosProductos.filter( fprod => fprod.categoria === idcat )
-        console.log( this.productos )
     }
 }
 </script>
