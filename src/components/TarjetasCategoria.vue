@@ -24,12 +24,9 @@ export default {
       let images = require.context('@/assets/Imagenes/Categorias/Hover', false, /\.jpg$|\.png$/)
       return images('./' + nombre_archivo)
     }
-
   }
-
 }
 </script>
-
 <style scoped>
 .container{
     display: flex;
@@ -37,16 +34,14 @@ export default {
     height: 100%;
     padding: 5px;
     margin: 10px;
-    position:relative;
+    position: relative;
 }
-
-
 .img-cat{
     display: flex;
     width: 200px;
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
-    position:absolute;
+    position: absolute;
 }
 .img-cat-top{
     display: flex;
@@ -54,7 +49,6 @@ export default {
     box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
 }
-
 .img-cat:hover{
     transition: all 0,50;
     display: block;
@@ -63,14 +57,4 @@ export default {
     width: 200px;
     opacity: 0;
 }
-
-
-
-/* .img-cat:hover{
-    filter: brightness(60%);
-    transition: all 0,50;
-} */
-
-
-
 </style>

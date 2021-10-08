@@ -134,3 +134,11 @@ export default {
     }
 }
 </script>
+<style scoped>
+.items{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-wrap: wrap;
+}
+</style>

@@ -6,7 +6,6 @@
   <div class="items">
     <tarjetas-categoria v-for="categoria in categorias" :key="categoria.id" :nombre="categoria.nombre" :imagen="categoria.imagen" :id="categoria.id"/> 
   </div>
-
   <pie-pagina/>
 </template>
 
@@ -28,7 +27,6 @@ export default {
   },
   data () {
     return {
-  
       categorias: [
         {
           id: 1,
@@ -65,36 +63,13 @@ export default {
       ]
     }
   },
-
 }
 </script>
 <style scoped>
-.cat-container {
-  align-content: center;
-  
-}
-.div-cat {
-  text-align: center;
-  position: relative;
-}
-
 .items{
   display:flex;
   justify-content: space-around;
   width: 100%;
   flex-wrap: wrap;
 }
-
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
