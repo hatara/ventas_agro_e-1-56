@@ -6,27 +6,33 @@
     <div><br></div>
     <div class="container">
     <form action="/action_page.php">
-        <div class="datos">
-        <input type="text" id="nombre" name="Nombre" placeholder="Nombre y apellido">
-        <input type="text" id="apodo" name="Apodo" placeholder="Apodo">
-        <input type="text" id="email" name="Email" placeholder="Correo electrónico">
-        <input type="t" id="apodo" name="libre" placeholder="">
-        <input type="text" id="contraseña" name="Contraseña" placeholder="Contraseña">
-        <input type="text" id="c-contraseña" name="C-Contraseña" placeholder="Confirma tu contraseña">
-        <select class="selector" id="tipoDoc" name="Tipo de documento" >
+
+      <div class="datos">
+        <input type="text"  id="nombre" name="Nombre" placeholder="Nombre y apellido">
+        <input type="text"  id="apodo" name="Apodo" placeholder="Apodo">
+        <input type="email"  id="email" name="Email" placeholder="Correo electrónico">
+        <input type="t"  id="none" name="none">
+        <input type="password"  id="contraseña" name="Contraseña" placeholder="Contraseña">
+        <input type="password"  id="c-contraseña" name="C-Contraseña" placeholder="Confirma tu contraseña">
+        <div align=left>
+          <input type="checkbox"  onclick="mostrarContraseña()"> Mostrar contraseña  
+        </div>
+        <select class="select"  id="tipoDoc" name="Tipo de documento" >
             <option value="CC">Tipo de documento</option>
             <option value="CC">Cédula de ciudadanía</option>
             <option value="TI">Tarjeta de identidad</option>
             <option value="CE">Cédula de extranjería</option>
             <option value="P">Pasaporte</option>
         </select>
-        <input type="text" id="n-documento" name="N_Documento" placeholder="Número de documento">
-        
-            <!-- <input type="checkbox" id="myCheck" onclick= tratamiento()>
-            <label for="myCheck">Acepto política de tratamiento de datos</label>  -->
-
-        <input type="submit" value="Registrarme">
+        <input type="text"  id="n-documento" name="N_Documento" placeholder="Número de documento">
+        <div align=left>
+          <input aling type="checkbox"  onclick="aceptar()">   Acepto política de tratamiento datos
+          <div align=right>
+            <input type="submit"  value="Registrarme">
+          </div>
         </div>
+      </div>
+      
     </form>
 </div>
     </div>
@@ -41,19 +47,21 @@
             CabezaPag},
     }
 
-    // function tratamiento() {
-    //     var checkBox = document.getElementById("myCheck");
-    //     var text = document.getElementById("text");
-    //     if (checkBox.checked == true){
-    //         text.style.display = "block";
-    //     } else {
-    //         text.style.display = "none";
+    // function mostrarContraseña() {
+    //     var x = document.getElementById("myInput");
+    //         if (x.type === "password") {
+    //             x.type = "text";
+    //         } else {
+    //             x.type = "password";
     //     }
     // }
+
+
 
     </script>
 
 <style>
+
 
 .datos{
     justify-content:center;
@@ -68,7 +76,25 @@
 }
 
 
-input[type=text], select {
+input[type=text], select{
+  width: 40%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  display: inline-flex;
+  border: 1px solid #ccc;
+  background: rgb(235, 234, 234);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color:#707070;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  justify-content:flex;
+}
+
+
+input[type=password] {
   width: 40%;
   padding: 10px 15px;
   margin: 10px 0;
@@ -85,6 +111,47 @@ input[type=text], select {
   justify-content:center;
 }
 
+input[type=email] {
+  width: 40%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  display: inline-flex;
+  border: 1px solid #ccc;
+  background: rgb(235, 234, 234);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color:#707070;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  justify-content:center;
+}
+
+.select {
+  width: 40%;
+  padding: 10px 15px;
+  margin: 10px 0;
+  display: inline-flex;
+  border: 1px solid #ccc;
+  background: rgb(235, 234, 234);
+  border-radius: 10px;
+  box-sizing: border-box;
+  color:#707070;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  justify-content:center;
+}
+
+input[type=checkbox] {
+  margin-left: 80px;
+  margin-right: 5px;
+  text-align: left;
+}
+
+
 input[type=t] {
   width: 40%;
   padding: 5px 10px;
@@ -98,6 +165,11 @@ input[type=t] {
   align-items: center;
   margin-left: 15px;
   margin-right: 15px;
+  color:transparent;
+}
+
+input[type=t]:hover {
+  border: none;
 }
 
 input[type=submit] {
@@ -110,7 +182,7 @@ input[type=submit] {
   border-radius: 10px;
   cursor: pointer;
   align-self: center;
-  margin-right: 50px;
+  margin-right: 80px;
   margin-left: 50px;
   margin-top: 20px;
 }
