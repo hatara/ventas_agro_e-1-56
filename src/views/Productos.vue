@@ -1,6 +1,6 @@
 <template>
     <cabeza-pag/>
-    <banner-sup imagen="bannerSup-productos.jpg"/>
+    <banner-sup :imagen="'banner-2-' + categoria.banner"/>
     <barra-utils/>
     <div class="row">
         <h3>Productos de {{ categoria.nombre }}</h3>
@@ -31,14 +31,14 @@ export default {
             categoria: {},
             productos: {},
             categorias: [
-                { id: 1, nombre: 'Frutas'},
-                { id: 2, nombre: 'Verduras'},
-                { id: 3, nombre: 'Legumbres'},
-                { id: 4, nombre: 'Tuberculos'},
-                { id: 5, nombre: 'Lácteos'},
-                { id: 6, nombre: 'Huevos'},
-                { id: 7, nombre: 'Carne, Pollo y Pescado'},
-                { id: 8, nombre: 'Otros'},
+                { id: 1, nombre: 'Frutas', banner: 'frutas.jpg'},
+                { id: 2, nombre: 'Verduras', banner: 'verduras.jpg'},
+                { id: 3, nombre: 'Legumbres', banner: 'legumbres.jpg'},
+                { id: 4, nombre: 'Tuberculos', banner: 'tuberculos.jpg'},
+                { id: 5, nombre: 'Lácteos', banner: 'lacteos.jpg'},
+                { id: 6, nombre: 'Huevos', banner: 'huevos.jpg'},
+                { id: 7, nombre: 'Carne, Pollo y Pescado', banner: 'carnes.jpg'},
+                { id: 8, nombre: 'Otros', banner: 'otros.jpg'},
             ],
             todosProductos: [
                 { id: 1, categoria: 1, nombre: 'Banano', unidad: '', precio: 0, imagen: '1_Banano.png' },

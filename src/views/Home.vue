@@ -1,6 +1,6 @@
 <template>
   <cabeza-pag/>
-  <banner-sup imagen="bannerSup-home.jpg"/>
+  <banner-sup imagen="banner-1-home.jpg"/>
   <barra-utils/>
   <div class="row">&nbsp;</div>
   <div class="items">

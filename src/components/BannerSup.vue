@@ -12,7 +12,7 @@ export default {
     methods: {
         getBannerImage () {
             /* Función para cargar imágenes dinámicamente */
-            let images = require.context('@/assets/', false, /\.jpg$|\.png$/)
+            let images = require.context('@/assets/banners/', false, /\.jpg$|\.png$/)
             return images('./' + this.imagen)
         }
     }
