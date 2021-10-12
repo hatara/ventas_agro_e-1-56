@@ -1,10 +1,10 @@
 <template>
-    <div class="tarjeta" @mouseover="mostrarBoton()">
+    <div class="tarjeta" @mouseover="mostrarBoton()" @mouseleave="ocultarBoton()">
         <img class="img-prod" :src="getImageProducto(imagen)">
-        <div class="boton">
-            <!-- <div v-show="verBoton" class="boton">&nbsp;</div> -->
-            <div v-show="verBoton" class="boton">Agregar</div>
-        </div>
+        <div v-show="!verBoton">&nbsp;<br>&nbsp;</div>
+        <div v-show="verBoton" class="nombre">{{ nombre }} x {{ unidad }}<br>{{ precio }}</div>
+        <div v-show="!verBoton" class="boton">&nbsp;</div>
+        <div v-show="verBoton" class="boton" @click="pedirCantidad()">Agregar</div>
     </div>
 </template>
 
@@ -13,8 +13,10 @@ export default {
     name: "TarjetasProducto",  
     props: {
         nombre: String,
+        unidad: String,
+        precio: Number,
         imagen: String,
-        id: Number
+        key: Number
     },
     data () {
         return {
@@ -28,6 +30,12 @@ export default {
         },
         mostrarBoton() {
             this.verBoton = true
+        },
+        ocultarBoton() {
+            this.verBoton = false
+        },
+        pedirCantidad () {
+            alert('Ingresa la Cantidad:')
         }
     },
     created () {
@@ -56,8 +64,11 @@ export default {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.botonContainer {
-    display: flex;
+.nombre {
+    text-align: center;
+}
+.precio {
+    text-align: center;
 }
 .boton {
     width: 100px;
@@ -65,7 +76,6 @@ export default {
     text-align: center;
     margin: 2px;
     border-radius: 5px;
-    /* position: absolute; */
     /* border: 1px solid black; */
 }
 </style>

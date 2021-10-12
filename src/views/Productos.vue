@@ -6,7 +6,9 @@
         <h3>Productos de {{ categoria.nombre }}</h3>
     </div>
     <div class="row items">
-        <tarjetas-producto v-for="producto in productos" :key="producto.id" :nombre="producto.nombre" :imagen="producto.imagen" :id="producto.id"/> 
+        <tarjetas-producto v-for="producto in productos" 
+            :key="producto.id" :nombre="producto.nombre" :unidad="producto.unidad"
+            :precio="producto.precio" :imagen="producto.imagen"/> 
     </div>
     <pie-pagina/>
 </template>
