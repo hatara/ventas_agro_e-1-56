@@ -5,7 +5,7 @@
     <div class="row">
         <h3>Productos de {{ categoria.nombre }}</h3>
     </div>
-    <div class="items">
+    <div class="row items">
         <tarjetas-producto v-for="producto in productos" :key="producto.id" :nombre="producto.nombre" :imagen="producto.imagen" :id="producto.id"/> 
     </div>
     <pie-pagina/>
@@ -136,9 +136,6 @@ export default {
 </script>
 <style scoped>
 .items{
-  display: flex;
   justify-content: space-around;
-  width: 100%;
-  flex-wrap: wrap;
 }
 </style>
