@@ -2,7 +2,8 @@
     <footer>
         <div class="row pie-pag">
             <div class="col-lg-2">
-                <span style="background-color: #DDE11D;">&nbsp;Logo&nbsp;</span>
+                <img v-bind:src="require('@/assets/logo_delcampo_b.svg')" alt="" class="logo">
+                <!-- <span style="background-color: #DDE11D;">&nbsp;Logo&nbsp;</span> -->
             </div>
             <div class="col-lg-8 reservados">
                 © Todos los derechos reservados 2021
@@ -28,5 +29,8 @@
     font-weight: bold;
     color: #FFF;
     text-align: center;
+}
+.logo{
+    width: 150px;
 }
 </style>

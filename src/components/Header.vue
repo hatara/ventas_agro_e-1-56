@@ -2,7 +2,7 @@
     <header>
         <div class="row cabecera">
             <div class="col-lg-3">
-                <router-link to="/">Ventas Agro (logo)</router-link>
+                <router-link to="/"><img v-bind:src="require('@/assets/logo_delcampo_c.svg')" alt="" class="logo"></router-link>
             </div>
             <div class="col-lg-6"></div>
             <div class="col-lg-1 div-tomate">
@@ -17,7 +17,7 @@
 </template>
 <style scoped>
 .cabecera {
-    height: 60px;
+    height: 80px;
     align-content: center;
 }
 .div-tomate {
@@ -26,5 +26,8 @@
 .tomate {
     height: 36px;
     width: 36px;
+}
+.logo{
+    width: 250px;
 }
 </style>

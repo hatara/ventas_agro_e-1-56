@@ -60,7 +60,7 @@ export default {
     /* border: 1px solid black; */
 }
 .tarjeta:hover {
-    background-color: #DDE11D;
+    background-color: #f5f7d0;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
