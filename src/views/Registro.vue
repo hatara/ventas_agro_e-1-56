@@ -28,20 +28,21 @@
                             <input v-model="cliente.c_contrasena" type="password" class="form-control" id="c_contrasena" name="c_contrasena" placeholder="Confirma tu contraseña" required>
                         </div>
                         <br>
-                        <div class="campos-formulario form-group">
+                        <!-- <div class="campos-formulario form-group">
                           <div class="form-check">
                             <input v-model="cliente.mostrarContrasena" type="checkbox" class="form-check-input is-invalid" id="mostrarContrasena" onclick="mostrarContrasena()" name="mostrarContrasena">Mostrar contraseña
                           </div>
                         </div>
-                        <br>
+                        <br> -->
                         <div class="campos-formulario form-group">
-                            <select  v-model="cliente.tipo_doc" type="select" class="form-control"  id="tipoDoc" name="Tipo de documento" >
+                            <input v-model="cliente.tipo_doc" type="text" class="form-control" id="tipo_doc" name="tipo_doc" placeholder="Tipo de documento" required>
+                            <!-- <select  v-model="cliente.tipo_doc" type="select" class="form-control"  id="tipoDoc" name="Tipo de documento" >
                                 <option value="CC">Tipo de documento</option>
                                 <option value="CC">Cédula de ciudadanía</option>
                                 <option value="TI">Tarjeta de identidad</option>
                                 <option value="CE">Cédula de extranjería</option>
                                 <option value="P">Pasaporte</option>
-                            </select>
+                            </select> -->
                         </div>
                         <div class="campos-formulario form-group">
                             <input v-model="cliente.numero_documento" type="text" class="form-control" id="num_documento" name="num_documento" placeholder="Número de documento" required>
@@ -99,6 +100,15 @@
         }
     },
     methods: {
+    //             mostrarContrasena() {
+    //     var x = document.getElementById("contrasena");
+    //         if (x.type === "password") {
+    //             x.type = "text";
+    //         } else {
+    //             x.type = "password";
+    //     }
+    // },
+
         registrarCliente () {
             axios.post('http://localhost:3000/api/nuevo-cliente',
             {
@@ -107,30 +117,22 @@
             .then(response => {
                 let status_peticion = response.status
                 let mensaje = response.data
-                if (status_peticion === 204 ) {
+                if (status_peticion === 200 ) {
                     this.$swal.fire(
                         'Cliente registrado',
-                        'Se ha registrado el cliente con identificación ' + this.cliente.identificacion,
+                        '¡Se ha registrado ' + this.cliente.apodo + 'exitosamente!',
                         'success'
                     )
                     this.cliente = {}
                 } else {
                     this.$swal.fire(
                         'Cliente NO registrado',
-                        'Ocurrió un error al registrar el cliente con identificación ' + this.cliente.numero_doc,
+                        'Ocurrió un error al registrar a ' + this.cliente.apodo,
                         'error'
                     )
                 }
                 console.log(mensaje)
             })
-        }
-    },
-        mostrarContrasena() {
-        var x = document.getElementById("contrasena");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
         }
     }
   }
