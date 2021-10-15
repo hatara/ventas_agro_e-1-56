@@ -4,6 +4,7 @@
   <barra-utils/>
   <div class="row">&nbsp;</div>
   <div class="items">
+    <!-- <div v-for="categoria in categorias" :key="categoria.id">{{ categoria.nombre }}</div> -->
     <tarjetas-categoria v-for="categoria in categorias" :key="categoria.id" :nombre="categoria.nombre" :imagen="categoria.imagen" :id="categoria.id"/> 
   </div>
   <pie-pagina/>
@@ -28,7 +29,8 @@ export default {
   },
   data () {
     return {
-      categorias: []
+      categorias: [],
+      categoria: {}
     }
   },
   created () {
@@ -37,7 +39,6 @@ export default {
       let status_peticion = response.status
       console.log('Estado de la Peticion: ' + status_peticion)
       this.categorias = response.data
-      console.log(this.categorias)
     })
   }
 }

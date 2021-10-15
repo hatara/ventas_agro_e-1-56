@@ -1,6 +1,6 @@
 <template>
     <cabeza-pag/>
-    <banner-sup :imagen="'banner-2-' + categoria.banner"/>
+    <!-- <banner-sup :imagen="'banner-2-' + categoria.imagen"/> -->
     <barra-utils/>
     <div class="row">
         <h3>Productos de {{ categoria.nombre }}</h3>
@@ -15,7 +15,7 @@
 <script>
 import axios from 'axios'
 import CabezaPag from '@/components/Header.vue'
-import BannerSup from '@/components/BannerSup.vue'
+//import BannerSup from '@/components/BannerSup.vue'
 import BarraUtils from '@/components/BarraUtils.vue'
 import PiePagina from '@/components/Footer.vue'
 import TarjetasProducto from '@/components/TarjetasProducto.vue'
@@ -24,7 +24,7 @@ export default {
     name: 'Productos',
     components: {
         CabezaPag,
-        BannerSup,
+        //BannerSup,
         BarraUtils,
         PiePagina,
         TarjetasProducto
@@ -41,13 +41,19 @@ export default {
 
     created () {
         let idcat = parseInt( this.$route.params.categoria ) 
-        axios.get('http://localhost:3000/api/productos')
+        axios.get('http://localhost:3000/api/categorias')
             .then(response =>{
-            console.log(response.data)
-            this.todosProductos = response.data
-            this.productos = this.todosProductos.filter( fprod => fprod.categoria === idcat )
+            let status_peticion = response.status
+            console.log('Peticion Categorias: ' + status_peticion)
             this.categorias = response.data
             this.categoria = this.categorias.find( fcat => fcat.id === idcat )
+            })
+        axios.get('http://localhost:3000/api/productos')
+            .then(response =>{
+            let status_peticion = response.status
+            console.log('Peticion Productos: ' + status_peticion)
+            this.todosProductos = response.data
+            this.productos = this.todosProductos.filter( fprod => fprod.categoria === idcat )
         })
     },
 }
@@ -56,4 +62,4 @@ export default {
     .items{
         justify-content: space-around;
     }
-    </style>
+</style>

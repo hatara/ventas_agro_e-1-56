@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <router-link :to="{ path: '/productos/' + id }"> 
-        <img class="img-cat" :src="getImageCategoria(imagen)">
-        <img class="img-cat-top" :src="getImageCategoriaH(imagen)">
+        <img class="img-cat" :src="getImageCategoria(id+'_'+imagen)">
+        <img class="img-cat-top" :src="getImageCategoriaH('h'+id+'_'+imagen)">
         </router-link>
     </div>
 </template>
@@ -17,11 +17,11 @@ export default {
     },
     methods: {
     getImageCategoria (nombre_archivo) {
-      let images = require.context('@/assets/Imagenes/Categorias', false, /\.jpg$|\.png$/)
+      let images = require.context('@/assets/categorias', false, /\.jpg$|\.png$/)
       return images('./' + nombre_archivo)
     },
     getImageCategoriaH (nombre_archivo) {
-      let images = require.context('@/assets/Imagenes/Categorias/Hover', false, /\.jpg$|\.png$/)
+      let images = require.context('@/assets/categoriashover', false, /\.jpg$|\.png$/)
       return images('./' + nombre_archivo)
     }
   }
