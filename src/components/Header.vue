@@ -9,12 +9,25 @@
                 <img alt="Ventas Agro logo" src="../assets/ico-tomate.png" class="tomate">
             </div>
             <div class="col-lg-2 ader">
-                <router-link to="/login">Ingreso</router-link>&nbsp;|&nbsp;
+                <span v-if="nombreCliente==='nologin'"><router-link to="/login">Ingreso</router-link></span>
+                <span v-if="nombreCliente!='nologin'">{{nombreCliente}}</span>
+                &nbsp;|&nbsp;
                 <router-link to="/registro">Registro</router-link>
             </div>
         </div>
     </header>
 </template>
+<script>
+export default {
+    name: 'Header',
+    props: {
+        nombreCliente: String
+    },
+    created () {
+        console.log('Header cliente:'+this.nombreCliente)
+    }
+}
+</script>
 <style scoped>
 .cabecera {
     height: 80px;

@@ -85,10 +85,11 @@
                         '¡Hola!',
                         '¿cómo estas ' + this.cliente.email + '?',
                         'success')
+                    this.$router.push('/?c='+this.cliente.email)
                 } else {
                     this.$swal.fire(
                         'Cliente no encontrado',
-                        'Este correo no esta registrado ' + this.cliente.email,
+                        'Este correo no esta registrado: ' + this.cliente.email,
                         'warning'
                     )
                 }

@@ -123,6 +123,7 @@
                         this.cliente.apodo + ' ¡Se ha registrado exitosamente!',
                         'success',
                     )
+                    this.$router.push('/?c='+this.cliente.nombres)
                     this.cliente = {}
                 } else {
                     this.$swal.fire(

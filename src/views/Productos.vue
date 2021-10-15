@@ -40,8 +40,7 @@ export default {
             todosProductos: []      
         }
     },
-    beforeCreate () {
-        // let idcat = parseInt( this.$route.params.categoria ) 
+    created () {
         let banner = this.$route.params.categoria + '.jpg'
         axios.get('http://localhost:3000/api/categorias')
             .then(response =>{
@@ -56,8 +55,6 @@ export default {
                 }
             }
             })
-    },
-    created () {
         // let idcat = parseInt( this.$route.params.categoria ) 
         axios.get('http://localhost:3000/api/productos')
             .then(response =>{
