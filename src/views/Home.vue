@@ -4,7 +4,6 @@
   <barra-utils/>
   <div class="row">&nbsp;</div>
   <div class="items">
-    <!-- <div v-for="categoria in categorias" :key="categoria.id">{{ categoria.nombre }}</div> -->
     <tarjetas-categoria v-for="categoria in categorias" :key="categoria.id" :nombre="categoria.nombre" :imagen="categoria.imagen" :id="categoria.id"/> 
   </div>
   <pie-pagina/>

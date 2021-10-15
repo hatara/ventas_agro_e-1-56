@@ -1,7 +1,7 @@
 <template>
     <cabeza-pag/>
-    <banner-sup :imagen="'banner-2-' + categoria.imagen"/>
-    <!-- <banner-sup :imagen="'banner-2-frutas.jpg'"/> -->
+    <banner-sup :imagen="'banner-2-' + $route.params.categoria + '.jpg'"/>
+    <!-- <banner-sup :imagen="'banner-2-' + categoria.imagen"/> -->
     <barra-utils/>
     <div class="row">
         <h3>Productos de {{ categoria.nombre }}</h3>
@@ -32,6 +32,8 @@ export default {
     },
     data () {
         return {
+            //idcat: Number, 
+            auxcat: [],
             categoria: {},
             productos: {},
             categorias: [],
@@ -39,23 +41,31 @@ export default {
         }
     },
     beforeCreate () {
-        let idcat = parseInt( this.$route.params.categoria ) 
+        // let idcat = parseInt( this.$route.params.categoria ) 
+        let banner = this.$route.params.categoria + '.jpg'
         axios.get('http://localhost:3000/api/categorias')
             .then(response =>{
             let status_peticion = response.status
             console.log('Peticion Categorias: ' + status_peticion)
             this.categorias = response.data
-            this.categoria = this.categorias.find( fcat => fcat.id === idcat )
+            // this.categoria = this.categorias.find( fcat => fcat.id === idcat )
+            let i = 0
+            for (i=0;i<8;i++) {
+                if ( this.categorias[i].imagen === banner ) {
+                    this.categoria = this.categorias[i]
+                }
+            }
             })
     },
     created () {
-        let idcat = parseInt( this.$route.params.categoria ) 
+        // let idcat = parseInt( this.$route.params.categoria ) 
         axios.get('http://localhost:3000/api/productos')
             .then(response =>{
             let status_peticion = response.status
             console.log('Peticion Productos: ' + status_peticion)
             this.todosProductos = response.data
-            this.productos = this.todosProductos.filter( fprod => fprod.categoria === idcat )
+            // this.productos = this.todosProductos.filter( fprod => fprod.categoria === idcat )
+            this.productos = this.todosProductos.filter( fprod => fprod.categoria === this.categoria.id )
         })
     },
 }

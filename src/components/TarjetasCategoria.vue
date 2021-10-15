@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-        <router-link :to="{ path: '/productos/' + id }"> 
+        <!-- <router-link :to="{ path: '/productos/' + id }">  -->
+        <router-link :to="{ path: '/productos/' + quitarJPG( imagen ) }"> 
         <img class="img-cat" :src="getImageCategoria(id+'_'+imagen)">
         <img class="img-cat-top" :src="getImageCategoriaH('h'+id+'_'+imagen)">
         </router-link>
@@ -23,6 +24,10 @@ export default {
     getImageCategoriaH (nombre_archivo) {
       let images = require.context('@/assets/categoriashover', false, /\.jpg$|\.png$/)
       return images('./' + nombre_archivo)
+    },
+    quitarJPG(imagen) {
+      let partes = imagen.split('.')
+      return partes[0]
     }
   }
 }
