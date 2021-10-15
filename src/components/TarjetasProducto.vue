@@ -1,8 +1,8 @@
 <template>
     <div class="tarjeta" @mouseover="mostrarBoton()" @mouseleave="ocultarBoton()">
         <img class="img-prod" :src="getImageProducto(imagen)">
-        <div v-show="!verBoton">&nbsp;<br>&nbsp;</div>
-        <div v-show="verBoton" class="nombre">{{ nombre }} x {{ unidad }}<br>{{ precio }}</div>
+        <div class="nombre">{{ nombre }} x {{ unidad }}</div>
+        <div class="precio">$ {{ precio }}</div>
         <div v-show="!verBoton" class="boton">&nbsp;</div>
         <div v-show="verBoton" class="boton" @click="pedirCantidad()">Agregar</div>
     </div>
