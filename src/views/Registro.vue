@@ -107,7 +107,7 @@
             .then(response => {
                 let status_peticion = response.status
                 let mensaje = response.data
-                if (status_peticion === 200) {
+                if (status_peticion === 204 ) {
                     this.$swal.fire(
                         'Cliente registrado',
                         'Se ha registrado el cliente con identificación ' + this.cliente.identificacion,
@@ -117,7 +117,7 @@
                 } else {
                     this.$swal.fire(
                         'Cliente NO registrado',
-                        'Ocurrió un error al registrar el cliente con identificación ' + this.cliente.identificacion,
+                        'Ocurrió un error al registrar el cliente con identificación ' + this.cliente.numero_doc,
                         'error'
                     )
                 }
