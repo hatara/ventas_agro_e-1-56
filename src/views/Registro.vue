@@ -45,7 +45,7 @@
                             </select> -->
                         </div>
                         <div class="campos-formulario form-group">
-                            <input v-model="cliente.numero_documento" type="text" class="form-control" id="num_documento" name="num_documento" placeholder="Número de documento" required>
+                            <input v-model="cliente.numero_doc" type="text" class="form-control" id="num_doc" name="num_doc" placeholder="Número de documento" required>
                         </div>
                         <div class="campos-formulario form-group">
                             <input v-model="cliente.telefono" type="number" class="form-control" id="telefono" name="telefono" placeholder="Número de teléfono">
@@ -120,8 +120,8 @@
                 if (status_peticion === 200 ) {
                     this.$swal.fire(
                         'Cliente registrado',
-                        '¡Se ha registrado ' + this.cliente.apodo + 'exitosamente!',
-                        'success'
+                        this.cliente.apodo + ' ¡Se ha registrado exitosamente!',
+                        'success',
                     )
                     this.cliente = {}
                 } else {

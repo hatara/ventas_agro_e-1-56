@@ -16,11 +16,11 @@
                             <input v-model="cliente.contrasena" type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña" required>
                         </div>
                         <br>
-                        <div class="campos-formulario form-group">
+                        <!-- <div class="campos-formulario form-group">
                           <div class="form-check">
                             <input v-model="cliente.mostrarContrasena" type="checkbox" class="form-check-input is-invalid" id="mostrarContrasena" onclick="mostrarContrasena()" name="mostrarContrasena">Mostrar contraseña
-                          </div>
-                        </div>
+                          </div> -->
+                        <!-- </div> -->
                         <br>
                         <div class="campos-formulario form-group">
                             <input @click="registrarCliente()" class="btn btn-primary" value="Registrarme" ><router-link to="/registro"></router-link>
@@ -37,7 +37,7 @@
 
     <script>
     import CabezaPag from '@/components/Header.vue'
-    // import axios from 'axios'
+    import axios from 'axios'
 
     export default {
     name: 'Login',
@@ -46,25 +46,55 @@
     },
     data () {
         return {
-            cliente: {
+              cliente: {
+                nombres: '',
+                apodo: '',
                 email: '',
                 contrasena: '',
+                c_contrasena: '',
+                tipo_doc: '',
+                numero_doc: '',
+                direccion: '',
+                telefono: '',
             }
         }
     },
+  //   methods: {
+  //       mostrarContrasena() {
+  //       var x = document.getElementById("contrasena");
+  //           if (x.type === "password") {
+  //               x.type = "text";
+  //           } else {
+  //               x.type = "password";
+  //       }
+  //   }
+  // },
+
+
     methods: {
-        mostrarContrasena() {
-        var x = document.getElementById("contrasena");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
+        inicioSesion () {
+            axios.get(`http://localhost:3000/api/cliente/${this.cliente.email}`,
+            {
+                data: this.cliente
+            })
+            .then(response => {
+                if (response.data !== null) {
+                    console.log("Holi funciono hasta aqui")
+                    console.log = response.data
+                    this.$swal.fire(
+                        '¡Hola!',
+                        '¿cómo estas ' + this.cliente.email + '?',
+                        'success')
+                } else {
+                    this.$swal.fire(
+                        'Cliente no encontrado',
+                        'Este correo no esta registrado ' + this.cliente.email,
+                        'warning'
+                    )
+                }
+            })
         }
-    }
-  }
-// Metodo pendiente>  inicioSesion(){
-  
-}
+    }}
 
     </script>
 
