@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import CabezaPag from '@/components/Header.vue'
 import BannerSup from '@/components/BannerSup.vue'
 import BarraUtils from '@/components/BarraUtils.vue'
@@ -27,42 +28,18 @@ export default {
   },
   data () {
     return {
-      categorias: [
-        {
-          id: 1,
-          nombre: 'Frutas',
-          imagen: 'cat_1_frutas.jpg'},
-        {
-          id: 2,
-          nombre: 'Verduras',
-          imagen: 'cat_2_Verduras.jpg'},
-        {
-          id: 3,
-          nombre: 'Legumbres',
-          imagen: 'cat_3_Legumbres.jpg',},
-        {
-          id: 4,
-          nombre: 'Tubérculos',
-          imagen: 'cat_4_Tuberculos.jpg',},
-        {
-          id: 5,
-          nombre: 'Lácteos',
-          imagen: 'cat_5_Lacteos.jpg',},
-        {
-          id: 6,
-          nombre: 'Huevos',
-          imagen: 'cat_6_Huevos.jpg',},
-        {
-          id: 7,
-          nombre: 'Carne, pollo y pescado',
-          imagen: 'cat_7_Carne_pollo_pescado.jpg'},
-        {
-          id: 8,
-          nombre: 'Otros',
-          imagen: 'cat_8_Otros.jpg',}
-      ]
+      categorias: []
     }
   },
+  created () {
+    axios.get('http://localhost:3000/api/categorias')
+    .then(response =>{
+      let status_peticion = response.status
+      console.log('Estado de la Peticion: ' + status_peticion)
+      this.categorias = response.data
+      console.log(this.categorias)
+    })
+  }
 }
 </script>
 <style scoped>
