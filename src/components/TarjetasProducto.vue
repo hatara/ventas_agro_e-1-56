@@ -3,8 +3,8 @@
         <img class="img-prod" :src="getImageProducto(imagen)">
         <div class="nombre">{{ nombre }} x {{ unidad }}</div>
         <div class="precio">$ {{ precio }}</div>
-        <div v-show="!verBoton" class="boton">&nbsp;</div>
-        <div v-show="verBoton" class="boton" @click="pedirCantidad()">Agregar</div>
+        <div v-show="!verBoton" class="botonOff">&nbsp;</div>
+        <div v-show="verBoton" class="botonOn" @click="pedirCantidad()">Agregar</div>
     </div>
 </template>
 
@@ -70,9 +70,17 @@ export default {
 .precio {
     text-align: center;
 }
-.boton {
+.botonOff {
     width: 100px;
     background-color: white;
+    text-align: center;
+    margin: 2px;
+    border-radius: 5px;
+    /* border: 1px solid black; */
+}
+.botonOn {
+    width: 100px;
+    background-color: #DDE11D;;
     text-align: center;
     margin: 2px;
     border-radius: 5px;
