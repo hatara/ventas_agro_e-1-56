@@ -1,8 +1,9 @@
 <template>
     <div class="tarjeta" @mouseover="mostrarBoton()" @mouseleave="ocultarBoton()">
         <img class="img-prod" :src="getImageProducto(imagen)">
-        <div class="nombre">{{ nombre }} x {{ unidad }}</div>
-        <div class="precio">$ {{ precio }}</div>
+        <div class="nombre"><h4><b>{{ nombre }} x {{unidad}}</b></h4> </div>
+        <!-- <div class ="unidad"><h5><b>{{unidad}}</b></h5></div> -->
+        <div class="precio"><h5>$ {{ precio }}</h5></div>
         <div v-show="!verBoton" class="boton">&nbsp;</div>
         <div v-show="verBoton" class="boton" @click="pedirCantidad()">Agregar</div>
     </div>
@@ -66,16 +67,27 @@ export default {
 }
 .nombre {
     text-align: center;
+    font-weight:900;
+    color: #044d0a;
 }
+.unidad {
+    text-align: center;
+}
+
 .precio {
     text-align: center;
 }
 .boton {
     width: 100px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     text-align: center;
     margin: 2px;
     border-radius: 5px;
     /* border: 1px solid black; */
 }
+.boton:hover{
+background-color: rgb(4, 90, 40);
+color: white;
+font-weight: bold;
+} 
 </style>
