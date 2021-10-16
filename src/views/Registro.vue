@@ -110,7 +110,7 @@
     // },
 
         registrarCliente () {
-            axios.post('http://localhost:3000/api/nuevo-cliente',
+            axios.post('https://del-campo-api.herokuapp.com/api/nuevo-cliente',
             {
                 data: this.cliente
             })

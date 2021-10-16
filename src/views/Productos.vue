@@ -42,7 +42,7 @@ export default {
     },
     created () {
         let banner = this.$route.params.categoria + '.jpg'
-        axios.get('http://localhost:3000/api/categorias')
+        axios.get('https://del-campo-api.herokuapp.com/api/categorias')
             .then(response =>{
             let status_peticion = response.status
             console.log('Peticion Categorias: ' + status_peticion)
@@ -56,7 +56,7 @@ export default {
             }
             })
         // let idcat = parseInt( this.$route.params.categoria ) 
-        axios.get('http://localhost:3000/api/productos')
+        axios.get('https://del-campo-api.herokuapp.com/api/productos')
             .then(response =>{
             let status_peticion = response.status
             console.log('Peticion Productos: ' + status_peticion)

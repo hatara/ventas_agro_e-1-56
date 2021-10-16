@@ -73,7 +73,7 @@
 
     methods: {
         inicioSesion () {
-            axios.get(`http://localhost:3000/api/cliente/${this.cliente.email}`,
+            axios.get(`https://del-campo-api.herokuapp.com/api/cliente/${this.cliente.email}`,
             {
                 data: this.cliente
             })

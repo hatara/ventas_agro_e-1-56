@@ -40,7 +40,7 @@ export default {
     } catch (error) {
       console.log( this.$route.query )
     }
-    axios.get('http://localhost:3000/api/categorias')
+    axios.get('https://del-campo-api.herokuapp.com/api/categorias')
     .then(response =>{
       let status_peticion = response.status
       console.log('Estado de la Peticion: ' + status_peticion)
