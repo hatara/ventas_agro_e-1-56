@@ -70,6 +70,7 @@ export default {
 }
 .precio {
     text-align: center;
+    font-weight:bolder;
 }
 .botonOff {
     width: 100px;
